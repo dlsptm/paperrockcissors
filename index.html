@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paper Rock Scissors</title>
+
+  <link rel="stylesheet" href="/asset/style/style.css">
+  <script src="./asset/script/script.js" defer></script>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <h1>Paper <span class="rock">Rock</span>  <span class="scissors">Cissors</span></h1>
+
+    <div class="game-container">
+      <div>
+      <label for="nbRound">Rounds :</label>
+      <input type="number" name="nbRound" id="nbRound" min="1" max="10" value="1">
+      <label for="gameOptn" class="gameOptn">Option</label>
+      <select name="gameOptn" id="gameOptn">
+        <option value="vsComputer" selected>Computer</option>
+        <option value="vsPlayer">Player</option>
+      </select>
+    </div>
+    <div>
+      <input type="text" name="player1Username" id="player1Username" placeholder="Username">
+      <input type="text" name="player2Username" id="player2Username" placeholder="Username">
+    </div>
+      <button id="playBtn">Let's play</button>
+    </div>
+  </header>
+
+  <main>
+    <canvas id="confetti"></canvas>
+    <aside>
+      <h3><i class="fa-solid fa-arrow-left" id="backward"></i></h3>
+      <h2>Make your Choice</h2>
+      <div class="optionsDisplay">
+        <h3>Rounds : <span class="Rounds">1</span> / <span id="maxRounds">1</span></h3>
+        <h3><span class="player1" id="player1">Computer</span> : <span class="player1Score">0</span></h3>
+        <h3><span class="player2" id="player2">Player</span> : <span class="player2Score">0</span></h3>
+      </div>
+    </aside>
+
+    <div class="card-container">
+      <h3 id="player1Display">Computer</h3>
+
+      <div class="player1Card">
+          <img src="./asset/img/paper.png" alt="Paper hand" class="paperCard cards" data-name="paper">
+
+          <img src="./asset/img/rock.png" alt="Rock hand" data-name="rock" class="rockCard cards">
+
+          <img src="./asset/img/cissors.png" alt="Scissors hand" data-name="scissors" class="scissorsCard cards">
+      </div>
+
+      <h3 id="player2Display">Player</h3>
+      <div class="player2Card">
+        <img src="./asset/img/paper.png" alt="Paper hand" class="paperCard cards hover" data-name="paper">
+
+        <img src="./asset/img/rock.png" alt="Rock hand" data-name="rock" class="rockCard cards hover">
+
+        <img src="./asset/img/cissors.png" alt="Scissors hand" data-name="scissors" class="scissorsCard cards hover">
+      </div>
+    </div>
+  </main>
+  <section class="restartGame">
+    <button class="restartBtn" onclick="restartGaming()">Restart</button>
+  </section>
+
+  <audio src="./asset/audio/loose.mp3" controls  id="looseEffect"></audio>
+  <audio src="./asset/audio/win .mp3" controls id="winEffect"></audio>
+  <audio src="./asset/audio/tie.mp3" controls id="tieEffect"></audio>
+  
+</body>
+</html>
+

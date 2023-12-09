@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  background: #0a0526;
+  color: whitesmoke;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+header {
+  background: #0a0526;
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 100px ;
+  z-index: 2;
+  position: absolute;
+  transition: all 0.3s;
+}
+
+h1 {
+  font-size: 8rem;
+  text-shadow: 0px 0px 80px #1500ff;
+   text-align: center;
+  color: rgb(222, 111, 193);
+  -webkit-text-stroke: 3px rgb(255, 255, 255);
+}
+
+.rock {
+  color: rgb(137, 211, 236);
+}
+
+.scissors {
+  color: #f6c25a;
+}
+
+
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.game-container div {
+  display: flex;
+  gap: 20px;
+}
+
+input, label, button, select {
+  font-size: 1.3rem;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+}
+
+button {
+  box-shadow: 0px 0px 27px 15px #290980;
+  border-radius: 10px;
+  padding: 15px 30px;
+  background: transparent ;
+  color: white;
+  font-size: 1.5rem;
+  margin: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background: white;
+  color: black;
+}
+
+
+#player1Username {
+  display: none;
+}
+
+main {
+  height: 100dvh;
+  width: 100%;
+  padding: 50px;
+  position: absolute;
+}
+
+aside{
+  display: grid;
+  grid-template-columns: 10% 70% 20%;
+}
+
+#backward {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 10px;
+  color: white;
+}
+
+.Rounds, .maxRounds, .player1Score, .player2Score  {
+  color: #e5cc99;
+  font-size: 1.8rem;
+}
+
+.card-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.player1Card, .player2Card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px 0;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.paperCard, .rockCard, .scissorsCard {
+  width: 200px;
+  height: 200px;
+  padding: 30px;
+  border-radius: 15px;
+  outline: 8px solid white;
+  border: 7px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.card:hover, .hover:hover {
+  transform: translateY(-10px);
+}
+
+.paperCard {
+  background: rgb(222, 111, 193);
+}
+
+.rockCard {
+  background: rgb(137, 211, 236);
+}
+
+.scissorsCard {
+  background: #f6c25a;
+}
+
+.toggleHidden {
+  opacity: 0;
+  z-index: -1;
+}
+
+.displayNone {
+  display: none;
+}
+
+.tie{
+  background: #f0e53d;
+  outline: 8px solid #f0e53d;
+  border: 7px solid black;
+}
+
+.winner{
+  background: #7aea89;
+  outline: 8px solid #7aea89;
+  border: 7px solid black;
+}
+
+.looser{
+  background: #d76161;
+  outline: 8px solid #d76161;
+  border: 7px solid black;
+}
+
+.final-tie{
+  background: linear-gradient(0deg, rgba(10,5,38,1) 76%, rgb(208, 195, 10) 100%);
+}
+
+.final-winner{
+  background: linear-gradient(0deg, rgba(10,5,38,1) 76%, rgb(62, 232, 85) 100%);
+}
+
+.final-looser{
+  background: linear-gradient(0deg, rgba(10,5,38,1) 76%, rgb(189, 27, 27) 100%);
+}
+
+.opacity {
+  opacity: 1;
+}
+
+
+#confetti {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.restartGame {
+  height: 100dvh;
+  width: 100%;
+  position: relative; 
+  z-index: -3;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.6s;
+}
+
+.restartBtn {
+  outline: 8px solid white;
+  border: 7px solid black;
+  background: #7b5ae8;
+  font-size: 2.5rem;
+}
+
+.restartBtn:hover {
+  background: rgb(232, 90, 130);
+}
+
+audio {
+  visibility: hidden;
+}
