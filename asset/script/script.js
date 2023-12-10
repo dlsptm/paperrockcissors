@@ -75,7 +75,8 @@ inputs.forEach(input => {
         const displayElement = document.getElementById(displayEquivalentId);
 
         displayElement.textContent = inputValue;
-        console.log(player2.textContent)
+        player2Display.textContent = player2.textContent;
+        player1Display.textContent = player1.textContent;
     });
 });
 
