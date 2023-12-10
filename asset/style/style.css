@@ -246,8 +246,6 @@ audio {
 }
 
 
-
-
 /* Media Query pour les appareils tablet */
 @media screen and (max-width: 768px) {
   body {
