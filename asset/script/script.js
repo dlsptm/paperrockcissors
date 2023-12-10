@@ -91,20 +91,13 @@ const computerChoice = () => {
 
 // Players selected card
 const cardsContainer = document.querySelector('.card-container');
-let computerSelectedChoice = null;
-let hasClicked = true;
 const Rounds = document.querySelector('.Rounds')
 const message = document.querySelector('aside h2')
 
+let computerSelectedChoice = null;
+let hasClicked = true;
 let currentRound = Number(Rounds.innerHTML)
-
 let player1Choice = ''
-
-const resetCardOpacity = () => {
-    cards.forEach(card => {
-        card.style.opacity = 1;
-    });
-};
 
 cards.forEach(card => {
     card.addEventListener('click', (e) => {
@@ -232,7 +225,6 @@ const roundsWinner = (playerChoice, computerChoice, playerCard, computerCard) =>
         message.textContent = `${player1.textContent} wins this round`
     }
 }
-
 
 // Determine the Final Winner
 
