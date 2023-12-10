@@ -218,7 +218,7 @@ h3 {
 }
 
 .restartGame {
-  height: 100dvh;
+  height: 100vh;
   width: 100%;
   position: relative; 
   z-index: -3;
@@ -243,4 +243,50 @@ h3 {
 
 audio {
   visibility: hidden;
+}
+
+
+
+
+/* Media Query pour les appareils tablet */
+@media screen and (max-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+
+aside{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+aside h2{
+  margin: 0 auto;
+}
+
+.optionsDisplay, .optionsDisplay h3{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.optionsDisplay span {
+  margin: 0 10px;
+}
+
+#backward {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  margin: 10px;
+}
+
+.player1Card, .player2Card {
+  gap: 40px;
+}
 }
