@@ -176,18 +176,21 @@ h3 {
   background: #f0e53d;
   outline: 8px solid #f0e53d;
   border: 7px solid black;
+  
 }
 
 .winner{
   background: #7aea89;
   outline: 8px solid #7aea89;
   border: 7px solid black;
+  
 }
 
 .looser{
   background: #d76161;
   outline: 8px solid #d76161;
   border: 7px solid black;
+  
 }
 
 .final-tie{
@@ -200,10 +203,6 @@ h3 {
 
 .final-looser{
   background: linear-gradient(0deg, rgba(10,5,38,1) 76%, rgb(189, 27, 27) 100%);
-}
-
-.opacity {
-  opacity: 1;
 }
 
 

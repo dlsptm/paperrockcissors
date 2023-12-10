@@ -5,6 +5,7 @@ const body = document.querySelector('body');
 const player2Card = document.querySelector('.player2Card');
 const player1Card = document.querySelector('.player1Card');
 
+
 // INTRO
 body.addEventListener('click', (event) => {
     if (event.target === playBtn) {
@@ -45,6 +46,8 @@ gameOptn.addEventListener('change', (e) => {
         player1Username.style.display = 'block';
         player1.textContent = 'Player 1';
         player2.textContent = 'Player 2';
+        player2Display.textContent = player2.textContent;
+        player1Display.textContent = player1.textContent;
         player1Card.style.opacity = 1;
         player2Card.style.opacity = 0.5; 
         cards.forEach(card => {
@@ -72,18 +75,7 @@ inputs.forEach(input => {
         const displayElement = document.getElementById(displayEquivalentId);
 
         displayElement.textContent = inputValue;
-
-        if (inputId === 'player2Username') {
-            const player2Display = document.querySelector('#player2Display');
-            if (player2Display) {
-                player2Display.textContent = player2Username.value;
-            }
-        } else if (inputId === 'player1Username') {
-            const player1Display = document.querySelector('#player1Display');
-            if (player1Display) {
-                player1Display.textContent = player1Username.value;
-            }
-        }
+        console.log(player2.textContent)
     });
 });
 
@@ -152,31 +144,32 @@ cards.forEach(card => {
         }
 
         if (gameOptn.value !== 'vsComputer') {
-            hasClicked = true
             if (hasClicked && e.target.parentElement === player1Card){
                 player1Card.style.opacity = 0.5;
                 player2Card.style.opacity = 1;
                 hasClicked = !hasClicked;
                 player1Choice = e.target.dataset.name
-            } else if (hasClicked && e.target.parentElement === player2Card) {
+            } else if (hasClicked === false && e.target.parentElement === player2Card) {
                 player1Card.style.opacity = 1;
                 player2Card.style.opacity = 0.5;        
                 let player2Choice = e.target.dataset.name
                 const player1cards = document.querySelector(`.player1Card .cards[data-name="${player1Choice}"]`);
-                hasClicked = !hasClicked
-
+                hasClicked = !hasClicked;
                 
+                roundsWinner(player2Choice, player1Choice, card, player1cards )
+
+                player1Card.style.opacity = 1;
+                player2Card.style.opacity = 1;  
                 if (currentRound < maxRounds.innerText) {
                     currentRound+=1
-
-                    roundsWinner(player1Choice, player2Choice, player1cards, card)
-                    player1Card.classList.add('opacity')
-                    player2Card.classList.add('opacity')
                     Rounds.innerHTML = currentRound
+                
+                
                     setTimeout(() => {
                         message.textContent = 'Make your Choice'
-                        player1Card.classList.remove('opacity')
-                        player2Card.classList.remove('opacity')
+                        player1Card.style.opacity = 1;
+                        player2Card.style.opacity = 0.5;
+                        hasClicked = !hasClicked;
                         }, 1500);
                 }
 
@@ -206,7 +199,6 @@ let playerScore = Number(player2Score.innerHTML)
 
 // Determine Winner in each round (vs computer)
 const roundsWinner = (playerChoice, computerChoice, playerCard, computerCard) => {
-    console.log(computerCard)
     if (playerChoice === computerChoice) {
         // Draw
         playerCard.classList.add('tie');
